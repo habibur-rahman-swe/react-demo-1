@@ -1,28 +1,6 @@
 import React from 'react'
 
-const ProductInfo = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Phone",
-      price: "$669"
-    },
-    {
-      id: 2,
-      name: "Phone",
-      price: "$669"
-    },
-    {
-      id: 3,
-      name: "Phone",
-      price: "$669"
-    },
-    {
-      id: 4,
-      name: "Phone",
-      price: "$669"
-    },
-  ]
+const ProductInfo = ({products}) => {
 
   return (
     <div>
