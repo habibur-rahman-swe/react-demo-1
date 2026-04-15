@@ -1,18 +1,40 @@
 import React from 'react'
 
 const ProductInfo = () => {
-  const product = {
-    name : "Laptop",
-    price: 1200,
-    availability: "In Stock"
-  }
+  const products = [
+    {
+      id: 1,
+      name: "Phone",
+      price: "$669"
+    },
+    {
+      id: 2,
+      name: "Phone",
+      price: "$669"
+    },
+    {
+      id: 3,
+      name: "Phone",
+      price: "$669"
+    },
+    {
+      id: 4,
+      name: "Phone",
+      price: "$669"
+    },
+  ]
 
   return (
     <div>
-      <h1>Name: {product.name}</h1>
-      <h1>Price: {product.price}</h1>
-      <h1>Availability: {product.availability}</h1>
-
+      <main>
+        {products.map(({id, name, price}) => (
+          <ul key={id}>
+            <li>Id: {id}</li>
+            <li>Name: {name}</li>
+            <li>Price: {price}</li>
+          </ul>
+        ))}
+      </main>
     </div>
   )
 }
