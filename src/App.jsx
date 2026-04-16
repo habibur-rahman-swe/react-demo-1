@@ -1,16 +1,24 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [friends, setFriend] = useState(["A", "B", "C"]);
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
-
+  const addOneFriend = () => setFriend([...friends, "D"]);
+  const removeFriend = () => setFriend(friends.filter((f) => f !== "D"));
+  const updateOneFriend = () => setFriend(friends.map(f => f === "D" ? "DX" : f))
+  
   return (
     <div>
-      <h1>{count}</h1>
-      <button onClick={decrement}>-</button>
-      <button onClick={increment}>+</button>
+      <h1>Friends</h1>
+      <ul>
+        {friends.map((friend) => (
+          <li key={Math.random()}>{friend}</li>
+        ))}
+      </ul>
+
+      <button onClick={addOneFriend}>Add new Friend</button>
+      <button onClick={removeFriend}>Remove new Friend</button>
+      <button onClick={updateOneFriend}>Update One Friend</button>
     </div>
     
   );
