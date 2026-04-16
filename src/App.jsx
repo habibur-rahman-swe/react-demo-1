@@ -1,38 +1,14 @@
 import React, { use, useState } from 'react'
+import ComponentOne from './components/ComponentOne';
+import ComponentTwo from './components/ComponentTwo';
 
 const App = () => {
-  const [movies, setMovies] = useState([
-    {
-      id: 1,
-      title: 'ABC',
-      rating: 7.8,
-    },
-    {
-      id: 2,
-      title: 'ABC',
-      rating: 7.8,
-    },
-    {
-      id: 3,
-      title: 'ABC',
-      rating: 7.8,
-    }]);
-  
-  const handleClick = () => {
-    setMovies(
-      movies.map((m) => (m.id === 2 ? {...m, title: "EFG"} : m))
-    );
-  }
+  const [count, setCount] = useState(0);
 
   return (
     <section>
-      {
-        movies.map(m => (
-          <li key={Math.random()}>Id: {m.id}, title: {m.title}</li>
-        ))
-      }
-
-      <button onClick={handleClick}>Change Movie Name of 2</button>
+      <ComponentOne count={count} onClickHandler={() => setCount(count + 1)}/>
+      <ComponentTwo count={count} onClickHandler={() => setCount(count + 1)}/>
     </section>
     
   );
