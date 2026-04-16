@@ -1,0 +1,2 @@
+- to cretae a react course start from here `npm create vite@latest`
+- `rafce`
